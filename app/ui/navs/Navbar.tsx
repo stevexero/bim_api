@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { User } from '@supabase/supabase-js';
 // import { usePathname } from 'next/navigation';
-// Commenting for redeployment
+
 interface NavbarProps {
   user: User | null;
 }
