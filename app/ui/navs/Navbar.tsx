@@ -2,14 +2,18 @@
 
 import Link from 'next/link';
 import { User } from '@supabase/supabase-js';
-// import { usePathname } from 'next/navigation';
-
+import { usePathname } from 'next/navigation';
+import AuthNav from './AuthNav';
 interface NavbarProps {
   user: User | null;
 }
 
 export default function Navbar({ user }: NavbarProps) {
-  //   const pathname = usePathname();
+  const pathname = usePathname();
+
+  if (pathname === '/signup') {
+    return <AuthNav />;
+  }
 
   return (
     <nav className='bg-white border-b border-gray-200'>

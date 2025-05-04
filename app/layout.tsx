@@ -23,7 +23,7 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body className='min-h-screen flex flex-col'>
-        <Navbar user={user} />
+        {<Navbar user={user} />}
         <main className='flex-grow'>{children}</main>
         <Footer />
       </body>

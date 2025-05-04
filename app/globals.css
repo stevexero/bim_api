@@ -1,1 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rubik+Dirt&display=swap');
 @import 'tailwindcss';
+
+@layer base {
+  .font-iceland {
+    font-family: 'Iceland', cursive;
+  }
+
+  .roboto-flex {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+}

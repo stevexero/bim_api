@@ -1,8 +1,15 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === '/signup') {
+    return null;
+  }
+
   return (
     <footer className='bg-white border-t border-gray-200 text-xs'>
       <div className='flex justify-between'>
