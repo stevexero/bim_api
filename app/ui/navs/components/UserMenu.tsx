@@ -38,13 +38,13 @@ export default function UserMenu({ user }: UserMenuProps) {
         onClick={() => setIsOpen(!isOpen)}
       />
       {isOpen && (
-        <div className='absolute top-full right-0 bg-white shadow-lg rounded-lg mt-4 text-sm text-gray-400 pb-2'>
+        <div className='absolute top-full right-0 bg-white shadow-lg rounded-lg mt-4 text-sm text-gray-400 pb-2 px-1'>
           <div className='px-3 py-2 border-b border-gray-300'>
             <p className='text-gray-500'>{user?.email}</p>
           </div>
           <Link
             href='/dashboard/account'
-            className='px-3 py-1 mt-2 flex items-center gap-1 hover:bg-gray-100 hover:text-gray-600 cursor-pointer'
+            className='px-3 py-1 mt-2 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 focus:outline-none cursor-pointer'
             onClick={() => setIsOpen(false)}
           >
             <IoMdSettings />
@@ -53,7 +53,7 @@ export default function UserMenu({ user }: UserMenuProps) {
           <form action={logoutAction}>
             <button
               type='submit'
-              className='w-full px-3 py-1 flex items-center gap-1 hover:bg-gray-100 hover:text-gray-600 cursor-pointer'
+              className='w-full px-3 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600 focus:outline-none cursor-pointer'
             >
               <IoLogOutSharp />
               <p>Logout</p>
