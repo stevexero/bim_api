@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createApiKey, verifyApiKey } from '@/app/actions';
+import { createApiKey, verifyApiKey } from '@/app/lib/actions/actions';
 
 // Create a new API key
 export async function POST(request: NextRequest) {

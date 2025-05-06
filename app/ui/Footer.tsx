@@ -2,21 +2,27 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import LogoLink from './links/LogoLink';
 
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname === '/signup') {
+  if (
+    pathname === '/signup' ||
+    pathname === '/login' ||
+    pathname === '/verify-email' ||
+    pathname.startsWith('/dashboard')
+  ) {
     return null;
   }
 
   return (
-    <footer className='bg-white border-t border-gray-200 text-xs'>
-      <div className='flex justify-between'>
+    <footer className='bg-black/90 border-t border-cyan-500 text-xs text-white'>
+      <div className='flex justify-between p-10'>
         <div className='flex flex-col'>
           {/* Company and Socials */}
-          <Link href='/'>BIMSystems</Link>
-          <div className='flex space-x-4'>
+          <LogoLink light={true} />
+          <div className='flex space-x-4 mt-4'>
             <Link href='/'>Twitter</Link>
             <Link href='/'>Facebook</Link>
             <Link href='/'>Instagram</Link>
@@ -25,7 +31,7 @@ export default function Footer() {
         </div>
         <div className='flex flex-col'>
           {/* Products */}
-          <p>Products</p>
+          <p className='mb-2 font-bold'>Products</p>
           <Link href='/'>
             Core Inventory Management (stock levels, SKUs, variants)
           </Link>
@@ -42,7 +48,7 @@ export default function Footer() {
           <Link href='/'>Multi-Tenant SaaS Platform with Subdomains</Link>
 
           {/* Services */}
-          <p>Services</p>
+          <p className='mt-4 mb-2 font-bold'>Services</p>
           <Link href='/'>Onboarding & Data Migration</Link>
           <Link href='/'>
             Custom Integrations (ERP, Shopify, QuickBooks, etc.)
@@ -58,7 +64,7 @@ export default function Footer() {
 
         <div className='flex flex-col'>
           {/* Support and Resources */}
-          <p>Resources</p>
+          <p className='mb-2 font-bold'>Resources</p>
           <Link href='/'>Support</Link>
           <Link href='/'>System Status</Link>
           <Link href='/'>Become a Partner</Link>
@@ -71,7 +77,7 @@ export default function Footer() {
         </div>
         <div className='flex flex-col'>
           {/* Developers and API */}
-          <p>Developers</p>
+          <p className='mb-2 font-bold'>Developers</p>
           <Link href='/'>Documentation</Link>
           <Link href='/'>BIM UI</Link>
           <Link href='/'>Changelog</Link>
@@ -83,7 +89,7 @@ export default function Footer() {
         </div>
         <div className='flex flex-col'>
           {/* Legal and Privacy */}
-          <p>Company</p>
+          <p className='mb-2 font-bold'>Company</p>
           <Link href='/'>Blog</Link>
           <Link href='/'>Customer Stories</Link>
           <Link href='/'>Careers</Link>
@@ -100,7 +106,7 @@ export default function Footer() {
           <Link href='/'>Security.txt</Link>
         </div>
       </div>
-      <div className='flex justify-between border-t border-gray-200'>
+      <div className='flex justify-between border-t border-gray-500 text-gray-500 px-10 py-1'>
         <p>© 2025 BIMSystems. All rights reserved.</p>
         <p>Powered by BIMSystems</p>
       </div>

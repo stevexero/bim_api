@@ -5,7 +5,7 @@ import {
   updateTestPhrases,
 } from '@/app/actions';
 import { getTestPhrases } from '@/app/data';
-import { verifyApiKey } from '@/app/actions';
+import { verifyApiKey } from '@/app/lib/actions/actions';
 
 async function requireApiKey(req: NextRequest): Promise<string | null> {
   const raw = req.headers.get('x-api-key');

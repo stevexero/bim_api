@@ -5,7 +5,7 @@ import Footer from './ui/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'BIM',
+  title: 'BIMSystems',
   description: 'BoxValet Inventory Management System',
 };
 
@@ -22,7 +22,7 @@ export default async function RootLayout({
 
   return (
     <html lang='en'>
-      <body className='min-h-screen flex flex-col'>
+      <body className='min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white'>
         {<Navbar user={user} />}
         <main className='flex-grow'>{children}</main>
         <Footer />

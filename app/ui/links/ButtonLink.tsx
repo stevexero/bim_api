@@ -28,11 +28,11 @@ export default function ButtonLink({
       className={`${
         buttonType === 'secondary'
           ? light
-            ? 'bg-transparent text-gray-900 border border-gray-900 hover:bg-gray-800 hover:text-white'
-            : 'bg-transparent text-gray-300 border border-gray-300 hover:bg-gray-300 hover:text-white'
+            ? 'bg-transparent text-gray-900 border border-gray-900 hover:bg-gray-800 hover:text-white focus:outline-cyan-500 focus:bg-cyan-400'
+            : 'bg-transparent text-gray-300 border border-gray-300 hover:bg-gray-300 hover:text-white focus:outline-cyan-600 focus:bg-cyan-500'
           : light
-          ? 'bg-cyan-300 text-black hover:bg-cyan-400 focus:outline-cyan-500 focus:bg-cyan-400'
-          : 'bg-cyan-500 text-white hover:bg-cyan-600 focus:outline-cyan-600 focus:bg-cyan-500'
+          ? 'bg-cyan-300 text-black border border-cyan-300 hover:bg-cyan-400 focus:outline-cyan-500 focus:bg-cyan-400'
+          : 'bg-cyan-500 text-white border border-cyan-500 hover:bg-cyan-600 focus:outline-cyan-600 focus:bg-cyan-500'
       }  font-bold p-2 rounded-lg cursor-pointer transition-all duration-300 ${
         disabled ? 'opacity-50 cursor-not-allowed' : ''
       } ${className} text-${textSize} font-${fontWeight}`}

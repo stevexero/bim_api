@@ -2,9 +2,18 @@ import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 
 export async function updateSession(request: NextRequest) {
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', request.nextUrl.pathname);
+
+  //   let supabaseResponse = NextResponse.next({
+  //     request,
+  //   });
+
   let supabaseResponse = NextResponse.next({
-    request,
+    request: { headers: requestHeaders },
   });
+
+  console.log('requestHeaders', requestHeaders);
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
