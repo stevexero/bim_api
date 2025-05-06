@@ -12,11 +12,11 @@ interface AuthNavProps {
 export default function AuthNav({ pathname, user }: AuthNavProps) {
   return (
     <nav
-      className={`absolute top-0 left-0 w-full p-1 ${
+      className={`absolute top-0 left-0 w-full px-2 py-1 ${
         pathname.startsWith('/dashboard')
           ? 'border-b border-gray-400 bg-white'
           : ''
-      } flex justify-between items-center`}
+      } flex justify-between items-center z-10`}
     >
       <LogoLink
         light={

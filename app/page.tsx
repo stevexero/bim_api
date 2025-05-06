@@ -19,7 +19,7 @@ export default async function Home({
 
   return (
     <main className='flex justify-center'>
-      <div className='max-w-xl mt-16 flex flex-col items-center justify-center'>
+      <div className='max-w-xl my-16 flex flex-col items-center justify-center'>
         <h1 className='font-roboto-flex text-cyan-500 font-bold text-[4rem] text-center leading-16'>
           <span className='text-gray-700'>Your Inventory,</span>
           <br />
