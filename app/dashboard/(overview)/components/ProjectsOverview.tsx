@@ -12,7 +12,7 @@ export default async function ProjectsOverview({
 
   return (
     <DashboardCard>
-      <h1 className='text-sm font-bold text-gray-600'>Projects Overview</h1>
+      <h3 className='text-sm font-bold text-gray-600'>Projects Overview</h3>
       <p className='text-sm text-gray-500 mt-4'>Projects: {projects?.length}</p>
     </DashboardCard>
   );
