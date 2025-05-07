@@ -3,7 +3,7 @@ import React from 'react';
 type ButtonType = 'submit' | 'button' | 'reset';
 
 interface ButtonProps {
-  label?: string;
+  label?: string | React.ReactNode;
   type?: ButtonType;
   ariaLabel?: string;
   className?: string;

@@ -6,6 +6,7 @@ interface TextBoxProps {
   placeholder?: string;
   required?: boolean;
   className?: string;
+  disabled?: boolean;
 }
 
 export default function TextBox({
@@ -16,6 +17,7 @@ export default function TextBox({
   placeholder = '',
   required = false,
   className = '',
+  disabled = false,
 }: TextBoxProps) {
   return (
     <>
@@ -27,8 +29,11 @@ export default function TextBox({
         name={name}
         id={id}
         aria-required={required}
-        className={`text-black rounded-lg bg-gray-200 p-2 mb-2 focus:outline-cyan-500 active:outline-cyan-500 ${className}`}
+        className={`text-black rounded-lg bg-gray-200 p-2 mb-2 focus:outline-cyan-500 active:outline-cyan-500 ${className} ${
+          disabled ? 'bg-gray-300' : ''
+        }`}
         placeholder={placeholder}
+        disabled={disabled}
       />
     </>
   );
