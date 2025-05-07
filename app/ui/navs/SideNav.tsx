@@ -1,16 +1,32 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { AiTwotoneProject } from 'react-icons/ai';
 import { IoPeopleSharp, IoReceiptSharp, IoMenu } from 'react-icons/io5';
 import { IoMdSettings } from 'react-icons/io';
 import { BiFoodMenu } from 'react-icons/bi';
 import { FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 export default function SideNav() {
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const getLinkClassName = (path: string) => {
+    const baseClasses =
+      'pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none';
+    if (!mounted) return baseClasses;
+    return `${baseClasses} ${
+      pathname === path ? 'bg-gray-100 text-gray-600' : ''
+    }`;
+  };
 
   return (
     <>
@@ -35,7 +51,7 @@ export default function SideNav() {
               <li className='mt-2'>
                 <Link
                   href='/dashboard/projects'
-                  className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+                  className={getLinkClassName('/dashboard/projects')}
                 >
                   <AiTwotoneProject className='text-lg mr-2' />
                   Projects
@@ -44,7 +60,7 @@ export default function SideNav() {
               <li>
                 <Link
                   href='/dashboard/team'
-                  className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+                  className={getLinkClassName('/dashboard/team')}
                 >
                   <IoPeopleSharp className='text-lg mr-2' />
                   Team
@@ -53,7 +69,7 @@ export default function SideNav() {
               <li>
                 <Link
                   href='/dashboard/billing'
-                  className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+                  className={getLinkClassName('/dashboard/billing')}
                 >
                   <IoReceiptSharp className='text-lg mr-2' />
                   Billing
@@ -62,7 +78,7 @@ export default function SideNav() {
               <li>
                 <Link
                   href='/dashboard/settings'
-                  className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+                  className={getLinkClassName('/dashboard/settings')}
                 >
                   <IoMdSettings className='text-lg mr-2' />
                   Settings
@@ -82,7 +98,7 @@ export default function SideNav() {
           <li className='mt-4'>
             <Link
               href='/dashboard/projects'
-              className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+              className={getLinkClassName('/dashboard/projects')}
             >
               <AiTwotoneProject
                 className={`text-lg ${isOpen ? 'mr-2' : 'mr-1 mt-[2px]'}`}
@@ -93,7 +109,7 @@ export default function SideNav() {
           <li>
             <Link
               href='/dashboard/team'
-              className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+              className={getLinkClassName('/dashboard/team')}
             >
               <IoPeopleSharp
                 className={`text-lg ${isOpen ? 'mr-2' : 'mr-1 mt-[2px]'}`}
@@ -104,7 +120,7 @@ export default function SideNav() {
           <li>
             <Link
               href='/dashboard/billing'
-              className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+              className={getLinkClassName('/dashboard/billing')}
             >
               <IoReceiptSharp
                 className={`text-lg ${isOpen ? 'mr-2' : 'mr-1 mt-[2px]'}`}
@@ -115,7 +131,7 @@ export default function SideNav() {
           <li>
             <Link
               href='/dashboard/settings'
-              className='pl-1 py-1 flex items-center gap-1 rounded hover:bg-gray-100 hover:text-gray-600 cursor-pointer focus:bg-gray-100 focus:text-gray-600 focus:outline-none'
+              className={getLinkClassName('/dashboard/settings')}
             >
               <IoMdSettings
                 className={`text-lg ${isOpen ? 'mr-2' : 'mr-1 mt-[2px]'}`}

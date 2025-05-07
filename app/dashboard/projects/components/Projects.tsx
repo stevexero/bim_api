@@ -1,6 +1,8 @@
 import { Suspense } from 'react';
-import ProjectsList from './ProjectsList';
+import { getAllProjectsByTenantId } from '@/app/lib/data/projects';
 import ModalButton from './ModalButton';
+import Link from 'next/dist/client/link';
+import ProjectOverview from './ProjectOverview';
 
 interface ProjectsProps {
   tenantId?: string | null;
@@ -8,11 +10,13 @@ interface ProjectsProps {
   createdBy?: string | null;
 }
 
-export default function Projects({
+export default async function Projects({
   tenantId,
   projectSlug,
   createdBy,
 }: ProjectsProps) {
+  const projects = await getAllProjectsByTenantId(tenantId ?? '');
+
   return (
     <div className='mt-4'>
       <ModalButton
@@ -20,9 +24,15 @@ export default function Projects({
         projectSlug={projectSlug ?? ''}
         createdBy={createdBy ?? ''}
       />
-      <Suspense fallback={<div>Loading...</div>}>
-        <ProjectsList tenantId={tenantId ?? ''} />
-      </Suspense>
+      <div className='grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 mr-8'>
+        {projects.map((project) => (
+          <Suspense fallback={<div>Loading...</div>} key={project.id}>
+            <Link href={`/dashboard/projects/${project.project_slug}`}>
+              <ProjectOverview projectName={project.project_name} />
+            </Link>
+          </Suspense>
+        ))}
+      </div>
     </div>
   );
 }

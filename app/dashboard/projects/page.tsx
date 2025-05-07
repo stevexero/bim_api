@@ -17,7 +17,7 @@ export default async function page() {
   const response = await getTenantByUserId(user.id);
 
   return (
-    <div className='w-full ml-72 mt-16'>
+    <div className='w-full ml-8 md:ml-72 mt-24 md:mt-16'>
       <h1 className='text-lg font-bold'>Projects</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <Projects tenantId={response?.data?.id} createdBy={user?.id} />

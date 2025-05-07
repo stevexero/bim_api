@@ -1,14 +1,10 @@
 interface ProjectCardProps {
-  project: {
-    id: string;
-    project_name: string;
-    project_slug: string;
-  };
+  children: React.ReactNode;
 }
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ children }: ProjectCardProps) {
   return (
-    <div className='flex flex-col gap-2 p-4 border border-white rounded-md'>
-      <h1>{project.project_name}</h1>
+    <div className='bg-gray-50 rounded-lg shadow-sm shadow-gray-400 border border-gray-300 p-4 hover:shadow-md hover:shadow-gray-400 hover:border-gray-400 hover:bg-white transition-all duration-300'>
+      {children}
     </div>
   );
 }

@@ -50,7 +50,6 @@ export default function Navbar({ user }: NavbarProps) {
         <ButtonLink
           href={user ? '/dashboard' : '/signup'}
           label={user ? 'Dashboard' : 'Get Started'}
-          light={false}
           textSize='xs'
         />
       </div>
