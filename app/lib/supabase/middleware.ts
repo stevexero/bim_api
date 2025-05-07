@@ -13,7 +13,7 @@ export async function updateSession(request: NextRequest) {
     request: { headers: requestHeaders },
   });
 
-  console.log('requestHeaders', requestHeaders);
+  console.log('requestHeaders==========', requestHeaders);
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

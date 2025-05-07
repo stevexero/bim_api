@@ -11,11 +11,9 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   return (
-    <div className='w-full min-h-screen flex items-center justify-center bg-gray-50'>
+    <div className='w-full min-h-screen flex justify-center'>
       <SideNav />
-      <div className='w-full max-w-md px-6 py-8 bg-white rounded-lg shadow'>
-        {children}
-      </div>
+      <div className='w-full bg-gray-100 flex justify-center'>{children}</div>
     </div>
   );
 }

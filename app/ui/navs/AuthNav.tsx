@@ -29,7 +29,8 @@ export default function AuthNav({ pathname, user }: AuthNavProps) {
       <div className='flex items-center gap-4'>
         <Link
           href='/docs'
-          className='bg-gray-100 md:bg-black text-gray-900 md:text-gray-300 text-xs font-bold py-1 px-2 flex items-center gap-1 rounded-lg hover:bg-gray-800 cursor-pointer transition-all duration-300 focus:outline-cyan-500 focus:bg-gray-800'
+          // className='bg-gray-100 md:bg-black text-gray-900 md:text-gray-300 text-xs font-bold py-1 px-2 flex items-center gap-1 rounded-lg hover:bg-gray-800 cursor-pointer transition-all duration-300 focus:outline-cyan-500 focus:bg-gray-800'
+          className='bg-black text-gray-300 text-xs font-bold py-1 px-2 flex items-center gap-1 rounded-lg hover:bg-gray-800 cursor-pointer transition-all duration-300 focus:outline-cyan-500 focus:bg-gray-800'
         >
           <SiReadthedocs />
           &nbsp;Documentation
