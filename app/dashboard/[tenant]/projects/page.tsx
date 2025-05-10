@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Projects from '@/app/dashboard/projects/components/Projects';
+import Projects from '@/app/dashboard/[tenant]/projects/components/Projects';
 import { createClient } from '@/app/lib/supabase/server';
 import { getTenantByUserId } from '@/app/lib/data/tenants';
 

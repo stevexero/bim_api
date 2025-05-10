@@ -26,13 +26,21 @@ export default function SignUpForm() {
         action={formAction}
         aria-label='Sign up form'
       >
-        <TextBox label='Email' name='email' id='email' type='email' required />
+        <TextBox
+          label='Email'
+          name='email'
+          id='email'
+          type='email'
+          required
+          light={false}
+        />
         <TextBox
           label='Password'
           name='password'
           id='password'
           type='password'
           required
+          light={false}
         />
         <Button
           label={isPending ? 'Logging in...' : 'Login'}

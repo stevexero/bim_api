@@ -27,8 +27,13 @@ export default async function Projects({
       <div className='grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 mr-8'>
         {projects.map((project) => (
           <Suspense fallback={<div>Loading...</div>} key={project.id}>
-            <Link href={`/dashboard/projects/${project.project_slug}`}>
-              <ProjectOverview projectName={project.project_name} />
+            <Link
+              href={`/dashboard/${tenantId}/projects/${project.project_slug}`}
+            >
+              <ProjectOverview
+                projectName={project.project_name}
+                status={project.status}
+              />
             </Link>
           </Suspense>
         ))}
