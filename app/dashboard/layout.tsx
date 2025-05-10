@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import SideNav from '../ui/navs/SideNav';
+// import Sidebar from '../ui/navs/Sidebar';
 
 export const metadata = {
-  title: 'Dashboard • BIM',
+  title: 'Creating tenant',
 };
 
 export default async function DashboardLayout({
@@ -11,9 +11,10 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   return (
-    <div className='w-full min-h-screen flex justify-center'>
-      <SideNav />
-      <div className='w-full bg-gray-200 flex justify-center'>{children}</div>
+    <div className='w-full min-h-screen flex justify-center items-center'>
+      {/* <Sidebar /> */}
+      {/* <div className='w-full bg-gray-200 flex justify-center'>{children}</div> */}
+      {children}
     </div>
   );
 }
